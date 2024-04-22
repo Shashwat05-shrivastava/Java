@@ -26,7 +26,15 @@ public class BinaryTree {
         PreOrder(node.left);
         PreOrder(node.right);
     }
-    
+    //Inorder Traversal
+    public static void InOrder(Node node){
+        if(node == null){
+            return;
+        }
+        InOrder(node.left);
+        System.out.println(node.data);
+        InOrder(node.right);
+    }
 
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
@@ -37,6 +45,7 @@ public class BinaryTree {
         tree.root.left.right = new Node(30);
 
         PreOrder(tree.root);
+        InOrder(tree.root);
     }
 
 }
