@@ -67,6 +67,8 @@ public class Implementation {
             Node temp=head;
             if(index==0){
                 head=head.next;
+                size--;
+                return;
             }
             for(int i=0;i<index-1;i++){
                 temp=temp.next;
