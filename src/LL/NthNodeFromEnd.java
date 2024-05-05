@@ -23,6 +23,22 @@ public class NthNodeFromEnd{
         }
         System.out.println(temp.data);
     }
+
+    public static void nthNodeFromEnd(Node head,int n){
+
+        Node fast=head;
+        Node slow=head;
+
+        for(int i=0;i<n;i++){
+            fast=fast.next;
+        }
+        while(fast!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        System.out.println(slow.data);
+
+    }
     public static void main(String[] args){
         Node a=new Node(10);
         Node b=new Node(20);
@@ -35,6 +51,7 @@ public class NthNodeFromEnd{
         c.next=d;
         d.next=e;
 
-        nthNodEnd(a,2);
+        //nthNodEnd(a,2);
+        nthNodeFromEnd(a,2);
     }
 }
