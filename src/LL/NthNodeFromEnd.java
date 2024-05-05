@@ -39,6 +39,33 @@ public class NthNodeFromEnd{
         System.out.println(slow.data);
 
     }
+    public static Node removeNthNodeFromEnd(Node head, int n){
+        Node slow=head;
+        Node fast=head;
+
+        for(int i=0;i<n;i++){
+            fast=fast.next;
+        }
+        if(fast==null){
+            head=head.next;
+            return head;
+        }
+
+        while(fast.next!=null){
+            fast=fsat.next;
+            slow=slow.next;
+        }
+        slow.next=slow.next.next;
+        return head;
+    }
+
+    public static void display(Node head){
+        Node temp=head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
+    }
     public static void main(String[] args){
         Node a=new Node(10);
         Node b=new Node(20);
@@ -53,5 +80,8 @@ public class NthNodeFromEnd{
 
         //nthNodEnd(a,2);
         nthNodeFromEnd(a,2);
+        display(a);
+        removeNthNodeFromEnd(a,2);
+        display(a);
     }
 }
